@@ -14,12 +14,16 @@
         </video>
     </div>
     <div id="frm">
-        <form action="" method="post">
+        <form action="" method="post" id="interface-form">
             <div id="fields">
                 <i class="fa fa-solid fa-user iicon"></i>
-                <input type="text" name="username" placeholder="Username" required class="login-field"><br>
+                <input id="username-field"type="text" name="username" placeholder="Username" >
+                <div id="user-err"></div>
+                <br>
                 <i class="fa-solid fa-lock icon"></i>
-                <input type="password" name="password" placeholder="Password" required class="login-field"><br>
+                <input id="password-field" type="password" name="password" placeholder="Password" >
+                <div id="pass-err"> </div>
+                <br>
                 <input type="submit" name="submit" id="sb">
             </div>
             <div id="sgu">
@@ -28,5 +32,7 @@
             
         </form>
     </div>
+<script src="../js/interface.js"></script>
+
 </body>
 </html>

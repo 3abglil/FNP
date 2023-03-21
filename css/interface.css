@@ -70,11 +70,12 @@
   border-style: none;
   padding: 20px;
   width: 200px;
-  margin: 20px;
+  margin: 0px;
   border-radius: 10px;
-  position: relative;
-  left: -37%;
-  top: 25%;
+  position:relative;
+  left: -65%;
+ bottom: -60%;
+
 }
 #sb:hover{
   border: white;
