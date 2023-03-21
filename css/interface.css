@@ -139,3 +139,15 @@
   min-width: 20px;
   text-align: center;
 }
+
+#lnk{
+  text-decoration: none;
+  color: white;
+}
+#lnk:hover{
+  text-decoration: none;
+  color: transparent;
+  border: 1px;
+  border-color: white;
+  border-style: solid;
+}
