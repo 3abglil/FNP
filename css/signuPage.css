@@ -43,6 +43,72 @@
   /* display: block; */
   /* padding: 30%; */
   /* top: 200px; */
-  width: 250px;
+  width: 200px;
   height: 30px;
+ 
 }
+h1.for{
+  color: #ffffff;
+  font-size:x-small ;
+  text-align: left;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   }
+   h1.for:hover{
+    color: rgb(71, 175, 235);
+  text-decoration: underline; 
+  }
+  .err
+  {
+    color: red;
+  }
+  #sub{
+    border: transparent;
+    border-style: none;
+    color: whitesmoke ;
+    background-color: black;
+    
+    text-align: center;
+    font-size: larger;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgba(000,000, 000, 0.5) ;
+    /* font-family: 'Open Sans', sans-serif; */
+    font-family: 'Open Sans', sans-serif;
+    border-style: none;
+    padding: 20px;
+    width: 200px;
+    margin: 20px;
+    border-radius: 10px;
+    position: relative;
+    left: -37%;
+    top: 25%;
+  }
+  #sub:hover{
+    border: white;
+    border-style: solid;
+    color: transparent;
+    background-color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white ;
+  }
+  #log a , #log{
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    font-size: medium;
+    padding: 20px;
+    width: 200px;
+    margin: 20px;
+    position:absolute;
+    left: 22%;
+    top: 67%;
+  }
+  #log a{
+    color:#36096D;
+    left: 40%;
+    top: -3%;
+  }
+  #log a:hover{
+    color:white;
+    left: 40%;
+    top: -3%;
+  }
