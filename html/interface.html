@@ -18,15 +18,15 @@
         </video>
     </div>
     <div id="frm">
-        <form action="" method="post" id="interface-form">
+        <form action="" method="post" id="interface-form" onsubmit="return validate (this)">
             <div id="fields">
                 <i class="fa fa-solid fa-user iicon"></i>
                 <input id="login-field" type="text" name="username" placeholder="Username">
-                <div id="user-err"></div>
+                <div id="uer"></div>
                 <br>
                 <i class="fa-solid fa-lock icon"></i>
                 <input id="login-field" type="password" name="password" placeholder="Password">
-                <div id="pass-err"> </div>
+                <div id="per"> </div>
                 <br>
                 <input type="submit" name="submit" id="sb">
             </div>
