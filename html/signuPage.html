@@ -10,45 +10,7 @@
     integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />>
 </head>
-<script>
 
-  function validateUserName(field, field1) {
-    if (field == '') {
-      document.getElementById("errorName").innerHTML = "Your name must be filled";
-      return 'jjj';
-    }
-
-    else
-      return '';
-  }
-
-
-
-
-  function validatePassword(field1, field2) {
-    if (field1 == '' || field2 == '')
-      document.getElementById("errorpass").innerHTML = "Your password must be filled";
-    else if (field1.length < 8) {
-      document.getElementById("errorpass").innerHTML = "your password must contain atleast 8 characters";
-    }
-    else if (field1 != field2)
-      document.getElementById("errorpass").innerHTML = "Your passwords must match";
-    else
-      return '';
-  }
-
-  function validate(form) {
-    let fail = '';
-    fail += validateUserName(form.fname.value, form.lname.value);
-    fail += validatePassword(form.password.value, form.passconf.value);
-    if (fail == '')
-      return true;
-    else {
-
-      return false;
-    }
-  }
-</script>
 
 <body>
   <div id="hello">
@@ -57,24 +19,35 @@
     </video>
   </div>
   <div id="frm">
-    <form action="" method="post" onsubmit="return validate(this)">
+    <form class="myform"action="" method="post" onsubmit="return validate(this)">
       <div id="cont">
         <h1
           style="color: aliceblue; text-align:center 12 ;padding-left: 23%;margin:1px ;padding-bottom: 5%;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
           Sign Up</h1>
         <div id="fields">
-          <input type="text" name="fname" placeholder="Fisrt Name" class="flds"><br><span class="err"
-            id="errorName"></span>
-          <input type="text" name="lname " placeholder="Last Name" class="flds"><br><span class="err"
-            id="errorName"></span>
-          <input type="text" name="username" placeholder="Username" class="flds"><br><span class="err"
-            id="erruser"></span>
-          <input type="email" name="email" placeholder="example@example.dom" class="flds"><br>
-          <input type="password" name="password" placeholder="Password" class="flds"><br><span class="err"
-            id="errorpass"></span>
-          <input type="password" name="passconf" placeholder="Confirm Password" class="flds"><br><span class="err"
-            id="errorpass"></span>
-          <input type="date" name="dob" class="flds"><br>
+         <span id="sname"></span> <input id = "fname"type="text" name="fname" placeholder="First Name" class="flds"><br><span  id="fname-err"class="err"
+           ></span>
+
+          <span id="slname"></span><input id = "lname"type="text" name="lname " placeholder="Last Name" class="flds"><br><span class="err"
+            id="lname-err"></span>
+            
+          <input id = "username" type="text" name="username" placeholder="Username" class="flds"><br><span class="err"
+            id="userspan"></span>
+
+          <input id = "email" type="email" name="email" placeholder="example@example.dom" class="flds"><br>
+
+
+          <input id = "password" type="password" name="password" placeholder="Password" class="flds"><br><span class="err"
+            id="per"></span>
+
+          <input id = "confirm-password"type="password" name="passconf" placeholder="Confirm Password" class="flds"><br><span class="err"
+            id="cer"></span>
+
+
+          <input type="date" name="dob" class="flds" ><br>
+          <span id="doberr"></span>
+
+
         </div>
         <div id="checks">
           <input type="checkbox" name="">
@@ -90,6 +63,7 @@
       </div>
     </form>
   </div>
+  <script src="../js/signup.js"></script>
 </body>
 
 </html>

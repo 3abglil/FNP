@@ -43,7 +43,7 @@
 #fields i{
   position: absolute;
 }
-.login-field{
+#login-field{
   /* height: 20px; */
   position: fixed;
   border-style: none;
@@ -60,7 +60,7 @@
   border-style: none;
   color: whitesmoke ;
   background-color: black;
-  
+
   text-align: center;
   font-size: larger;
   -webkit-text-stroke-width: 1px;
@@ -70,12 +70,11 @@
   border-style: none;
   padding: 20px;
   width: 200px;
-  margin: 0px;
+  margin: 20px;
   border-radius: 10px;
-  position:relative;
-  left: -65%;
- bottom: -60%;
-
+  position: relative;
+  left: -37%;
+  top: 25%;
 }
 #sb:hover{
   border: white;
@@ -138,16 +137,4 @@
   color: white;
   min-width: 20px;
   text-align: center;
-}
-
-#lnk{
-  text-decoration: none;
-  color: white;
-}
-#lnk:hover{
-  text-decoration: none;
-  color: transparent;
-  border: 1px;
-  border-color: white;
-  border-style: solid;
 }
