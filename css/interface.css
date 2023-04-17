@@ -45,7 +45,7 @@
 #fields i{
   position: absolute;
 }
-#login-field{
+.login-field{
   /* height: 20px; */
   position: fixed;
   border-style: none;

@@ -1,8 +1,13 @@
-const user = document.getElementsByName('username');
-const pass = document.getElementsByName('password');
-const form = document.getElementById('interface-form');
-
+const user = document.getElementById('username');
+const pass = document.getElementById('password');
 function signin(){
-   // window.location.href="https://www.w3schools.com";
-   window.location.href="./html/admin.html";
+   if(user.value=="admin"){
+      if(pass.value=="admin"){
+         window.location.href="./html/admin.html";
+      }else{
+         console.log("hi1");
+      }
+   }else{
+      console.log("hi2");
+   }
 }
