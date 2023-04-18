@@ -58,6 +58,7 @@
   top: -20%;
 }
 #sb{
+  height: 15%;
   border: transparent;
   border-style: none;
   color: whitesmoke ;
@@ -74,8 +75,8 @@
   margin: 20px;
   border-radius: 10px;
   position: relative;
-  left: -42%;
-  top: 25%;
+  left: 30%;
+  top: 65%;
 }
 #sb:hover{
   border: white;

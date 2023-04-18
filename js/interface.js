@@ -7,7 +7,14 @@ function signin(){
       }else{
          console.log("hi1");
       }
-   }else{
+   }else if(user.value!=""){
+      if(pass.vlaue!=""){
+         window.location.href="./html/home.html";
+      }else{
+         console.log('hi3');
+      }
       console.log("hi2");
+   }else{
+      console.log("username or pssword cannot be empty");
    }
 }
