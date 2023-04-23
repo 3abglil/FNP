@@ -1,107 +1,243 @@
-// function samir(field1,field2) {
-//     if(field1==''||field2==''){
-//      document.getElementById('sname').innerText = '*';
-//      document.getElementById('slname').innerText = '*';
+let id = (id) => document.getElementById(id);
+let classes = (classes) => document.getElementsByClassName(classes);
 
-//     } else{
-//      return "";
-//     }
-//  }
+const slidePage = document.querySelector(".slide-page");
+const nextBtnFirst = document.querySelector(".firstNext");
+const prevBtnSec = document.querySelector(".prev-1");
+const nextBtnSec = document.querySelector(".next-1");
+const prevBtnThird = document.querySelector(".prev-2");
+const nextBtnThird = document.querySelector(".next-2");
+const prevBtnFourth = document.querySelector(".prev-3");
+const submitBtn = document.querySelector(".submit");
+const progressText = document.querySelectorAll(".step p");
+const progressCheck = document.querySelectorAll(".step .check");
+const bullet = document.querySelectorAll(".step .bullet");
+let current = 1;
+const fn = id("fn");
+const ln = id("ln");
+const mail = id("mail");
+const phone = id("phone");
+const dob = id("dob");
+const gender = id("gender");
+const user = id("user");
+const pass = id("pass");
+const passconf = id("passconf");
+const check = classes("success-icon");
+const fail = classes("failure-icon");
+const eror = classes("error");
 
-function validate(form) {
-  fail = "";
-  //  fail += samir(form.fname.value,form.lname.value);
-  fail += validate_fname(form.fname.value);
-  fail += validate_lname(form.lname.value);
-  fail += validate_u(form.username.value);
-  fail += validate_password(form.password.value, form.passconf.value);
-  fail += validateDOB(form.dob.value);
-  // fail += validate_password(form.password.value, form.passconf.value);
-  if (fail == "") return true;
-  else return false;
-}
-function validate_u(field) {
-  if (field == "") {
-    document.getElementById("userspan").innerText = "You Must Enter a username";
-    return "jjj";
+nextBtnFirst.addEventListener("click", (e) => {
+  if (fn.value !== "" && ln.value !== "") {
+    e.preventDefault();
+    slidePage.style.marginLeft = "-25%";
+    bullet[current - 1].classList.add("active");
+    progressCheck[current - 1].classList.add("active");
+    progressText[current - 1].classList.add("active");
+    current += 1;
+    eror[1].innerHTML = "";
+    ln.style.border = "2px solid green";
+    fail[1].style.opacity = "0";
+    check[1].style.opacity = "1";
+    eror[0].innerHTML = "";
+    fn.style.border = "2px solid green";
+    fail[0].style.opacity = "0";
+    check[0].style.opacity = "1";
   } else {
-    return "";
+    if (fn.value === "") {
+      slidePage.style.marginLeft = "0%";
+      eror[0].innerHTML = "Fisrt name can't be empty";
+      fn.style.border = "2px solid red";
+      fail[0].style.opacity = "1";
+      check[0].style.opacity = "0";
+    } else {
+      eror[0].innerHTML = "";
+      fn.style.border = "2px solid green";
+      fail[0].style.opacity = "0";
+      check[0].style.opacity = "1";
+    }
+    if (ln.value === "") {
+      slidePage.style.marginLeft = "0%";
+      eror[1].innerHTML = "Last name can't be empty";
+      ln.style.border = "2px solid red";
+      fail[1].style.opacity = "1";
+      check[1].style.opacity = "0";
+    } else {
+      eror[1].innerHTML = "";
+      ln.style.border = "2px solid green";
+      fail[1].style.opacity = "0";
+      check[1].style.opacity = "1";
+    }
   }
-}
-
-function validate_fname(field) {
-  if (field == "") {
-    document.getElementById("fname-err").innerText =
-      "You Must Enter a firstname.";
-    return "jjj";
+});
+nextBtnSec.addEventListener("click", (e) => {
+  if (mail.value !== "" && phone.value !== "") {
+    e.preventDefault();
+    slidePage.style.marginLeft = "-50%";
+    bullet[current - 1].classList.add("active");
+    progressCheck[current - 1].classList.add("active");
+    progressText[current - 1].classList.add("active");
+    current += 1;
+    eror[2].innerHTML = "";
+    mail.style.border = "2px solid green";
+    fail[2].style.opacity = "0";
+    check[2].style.opacity = "1";
+    eror[3].innerHTML = "";
+    phone.style.border = "2px solid green";
+    fail[3].style.opacity = "0";
+    check[3].style.opacity = "1";
   } else {
-    return "";
+    if (mail.value === "") {
+      slidePage.style.marginLeft = "-25%";
+      eror[2].innerHTML = "E-Mail can't be empty";
+      mail.style.border = "2px solid red";
+      fail[2].style.opacity = "1";
+      check[2].style.opacity = "0";
+    } else {
+      eror[2].innerHTML = "";
+      mail.style.border = "2px solid green";
+      fail[2].style.opacity = "0";
+      check[2].style.opacity = "1";
+    }
+    if (phone.value === "") {
+      slidePage.style.marginLeft = "-25%";
+      eror[3].innerHTML = "You Must Enter A Phone Number";
+      phone.style.border = "2px solid red";
+      fail[3].style.opacity = "1";
+      check[3].style.opacity = "0";
+    } else {
+      eror[3].innerHTML = "";
+      phone.style.border = "2px solid green";
+      fail[3].style.opacity = "0";
+      check[3].style.opacity = "1";
+    }
   }
-}
-function validate_lname(field) {
-  if (field == "") {
-    document.getElementById("lname-err").innerText =
-      "You Must Enter a lastname.";
-    return "Yyy";
+});
+nextBtnThird.addEventListener("click", (e) => {
+  if (dob.value !== "" && gender.value !== "") {
+    if (dob.value < 18) {
+      slidePage.style.marginLeft = "-50%";
+      eror[4].innerHTML = "You Must Be 18 Or Older";
+      dob.style.border = "2px solid red";
+      fail[4].style.opacity = "1";
+      check[4].style.opacity = "0";
+    } else {
+      e.preventDefault();
+      slidePage.style.marginLeft = "-75%";
+      bullet[current - 1].classList.add("active");
+      progressCheck[current - 1].classList.add("active");
+      progressText[current - 1].classList.add("active");
+      current += 1;
+      eror[4].innerHTML = "";
+      dob.style.border = "2px solid green";
+      fail[4].style.opacity = "0";
+      check[4].style.opacity = "1";
+    }
   } else {
-    return "";
+    if (dob.value === "") {
+      slidePage.style.marginLeft = "-50%";
+      eror[4].innerHTML = "Date Of Birth Cannot be empty";
+      dob.style.border = "2px solid red";
+      fail[4].style.opacity = "1";
+      check[4].style.opacity = "0";
+    } else {
+      eror[4].innerHTML = "";
+      fn.style.border = "2px solid green";
+      fail[4].style.opacity = "0";
+      check[4].style.opacity = "1";
+    }
   }
-}
-
-function validate_password(field1, field2) {
-  if (field1 == "" || field2 == "") {
-    document.getElementById("per").innerText = "You Must Enter a Password.";
-    document.getElementById("cer").innerText = "You Must Enter a Password.";
-    return "Yhh";
-  } else if (field1 != field2) {
-    document.getElementById("cer").innerText =
-      "You must Enter a matching Password.";
-    return "Ydd";
-  } else return "";
-}
-
-function validateDOB(field) {
-  let dob1 = new Date(field);
-  let diff_ms = Date.now() - dob1.getTime();
-  let age_dt = new Date(diff_ms);
-  if (Math.abs(age_dt.getUTCFullYear() - 1970) >= 18) return "";
-  else {
-    document.getElementById("doberr").innerText =
-      "You Must be older than 18 years.";
-    return "fff";
+});
+submitBtn.addEventListener("click", function () {
+  if (user.value !== "" && pass.value !== "" && passconf.value !== "") {
+    if (pass.value !== passconf.value) {
+      slidePage.style.marginLeft = "-75%";
+      eror[6].innerHTML = "Password dowsn't Match";
+      eror[7].innerHTML = "Password dowsn't Match";
+      passconf.style.border = "2px solid red";
+      pass.style.border = "2px solid red";
+      fail[6].style.opacity = "1";
+      fail[7].style.opacity = "1";
+      check[6].style.opacity = "0";
+      check[7].style.opacity = "0";
+    } else {
+      eror[7].innerHTML = "";
+      passconf.style.border = "2px solid green";
+      fail[7].style.opacity = "0";
+      check[7].style.opacity = "1";
+      eror[6].innerHTML = "";
+      pass.style.border = "2px solid green";
+      fail[6].style.opacity = "0";
+      check[6].style.opacity = "1";
+      bullet[current - 1].classList.add("active");
+      progressCheck[current - 1].classList.add("active");
+      progressText[current - 1].classList.add("active");
+      current += 1;
+      eror[5].innerHTML = "";
+      user.style.border = "2px solid green";
+      fail[5].style.opacity = "0";
+      check[5].style.opacity = "1";
+    }
+  } else {
+    if (user.value === "") {
+      slidePage.style.marginLeft = "-75%";
+      eror[5].innerHTML = "Username Cannot be empty";
+      user.style.border = "2px solid red";
+      fail[5].style.opacity = "1";
+      check[5].style.opacity = "0";
+    } else {
+      eror[5].innerHTML = "";
+      user.style.border = "2px solid green";
+      fail[5].style.opacity = "0";
+      check[5].style.opacity = "1";
+    }
+    if (pass.value === "") {
+      slidePage.style.marginLeft = "-75%";
+      eror[6].innerHTML = "passsword Cannot be empty";
+      pass.style.border = "2px solid red";
+      fail[6].style.opacity = "1";
+      check[6].style.opacity = "0";
+    } else {
+      eror[6].innerHTML = "";
+      pass.style.border = "2px solid green";
+      fail[6].style.opacity = "0";
+      check[6].style.opacity = "1";
+    }
+    if (passconf.value === "") {
+      slidePage.style.marginLeft = "-75%";
+      eror[7].innerHTML = "Passsword Confirmation Cannot be empty";
+      passconf.style.border = "2px solid red";
+      fail[7].style.opacity = "1";
+      check[7].style.opacity = "0";
+    } else {
+      eror[7].innerHTML = "";
+      passconf.style.border = "2px solid green";
+      fail[7].style.opacity = "0";
+      check[7].style.opacity = "1";
+    }
   }
-}
+});
 
-// function validate_password(field1, field2) {
-//         if (field1 == '' || field2 == '') {
-//             document.getElementById('pass-err').innerText = 'You Must Enter a Password.';
-//             document.getElementById('c-err').innerText = 'You Must Enter a Password.';
-//             return 'You Must Enter a Password.';
-//         }
-//         else if (field1 != field2) {
-//             document.getElementById('pass-err').innerText = 'You must Enter a matching Password.';
-//             return 'You must Enter a matching Password.';
-//         }
-//         else
-//             return '';
-//     }
-
-////validate signup
-// function validatepassconf(field) {
-//   if (field !== document.getElementById("passs").value) {
-//      return "passwords doesn't mach ";
-//   } else {
-//      return "";
-//   }
-// }
-
-// function validatedob(field) {
-//   date = new Date();
-//   if (field == "") {
-//      return "You must enter date of birth";
-//   } else if (document.getElementById("doob").value - date < 18) {
-//      return "You must be over 18";
-//   } else {
-//      return "";
-//   }
-// }
+prevBtnSec.addEventListener("click", (e) => {
+  e.preventDefault();
+  slidePage.style.marginLeft = "0%";
+  bullet[current - 2].classList.remove("active");
+  progressCheck[current - 2].classList.remove("active");
+  progressText[current - 2].classList.remove("active");
+  current -= 1;
+});
+prevBtnThird.addEventListener("click", (e) => {
+  e.preventDefault();
+  slidePage.style.marginLeft = "-25%";
+  bullet[current - 2].classList.remove("active");
+  progressCheck[current - 2].classList.remove("active");
+  progressText[current - 2].classList.remove("active");
+  current -= 1;
+});
+prevBtnFourth.addEventListener("click", (e) => {
+  e.preventDefault();
+  slidePage.style.marginLeft = "-50%";
+  bullet[current - 2].classList.remove("active");
+  progressCheck[current - 2].classList.remove("active");
+  progressText[current - 2].classList.remove("active");
+  current -= 1;
+});
