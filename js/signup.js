@@ -176,6 +176,7 @@ submitBtn.addEventListener("click", function () {
       user.style.border = "2px solid green";
       fail[5].style.opacity = "0";
       check[5].style.opacity = "1";
+      window.location.href="./html/home.html";
     }
   } else {
     if (user.value === "") {

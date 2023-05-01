@@ -33,7 +33,7 @@
   left: 50%;
   height: 500px;
   transform: translate(-50% , -50%);
-  background: linear-gradient(270deg,#37D5D6 , #36096D);
+  background: #fff;
 }
 #fields{
   padding: 30%;
@@ -48,7 +48,7 @@
 .login-field{
   /* height: 20px; */
   position: fixed;
-  border-style: none;
+  border-style: solid;
   padding: 20px;
   width: 350px;
   margin: 20px;
@@ -56,16 +56,18 @@
   position: relative;
   left: -250px;
   top: -20%;
+  border-color: #3e8eba;
+  border-left-style: none;
 }
 #sb{
   height: 15%;
   border: transparent;
   border-style: none;
   color: whitesmoke ;
-  background-color: black;
+  background-color: #3e8eba;
   text-align: center;
   font-size: larger;
-  -webkit-text-stroke-width: 1px;
+  /* -webkit-text-stroke-width: 1px; */
   -webkit-text-stroke-color: rgba(000,000, 000, 0.5) ;
   /* font-family: 'Open Sans', sans-serif; */
   font-family: 'Open Sans', sans-serif;
@@ -79,12 +81,12 @@
   top: 65%;
 }
 #sb:hover{
-  border: white;
+  border: #3e8eba;
   border-style: solid;
   color: transparent;
   background-color: transparent;
   -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: white ;
+  -webkit-text-stroke-color: #3e8eba ;
 }
 #sgu a , #sgu{
   text-decoration: none;
@@ -99,12 +101,12 @@
   top: 77%;
 }
 #sgu a{
-  color:#36096D;
+  color:#3e8eba;
   left: 40%;
   top: -3%;
 }
 #sgu a:hover{
-  color:white;
+  color:#36096D;
   left: 40%;
   top: -3%;
 }
@@ -113,21 +115,23 @@
   top: 200px;
   border-radius: 20px 0px 0px 20px;
   padding: 20px;
-  background: black;
+  background: #3e8eba;
   color: white;
   min-width: 20px;
   text-align: center;
+  height: 20px;
 }
 .icon{
   left: -14%;
-  top: 311.5px;
+  top: 315px;
   border-radius: 20px 0px 0px 20px;
-  transform: scale(var(--ggs,1));
+  /* transform: scale(var(--ggs,1)); */
   padding: 20px;
-  background: black;
+  background: #3e8eba;
   color: white;
   min-width: 20px;
   text-align: center;
+  height: 20px;
 }
 #wel
 {
